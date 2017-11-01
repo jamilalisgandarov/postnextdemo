@@ -1,0 +1,39 @@
+/*=============================================
+=            footer            =
+=============================================*/
+
+footer {
+    padding: 45px 0;
+    background: #f7f8f9;
+    border-top: 1px solid rgba(213, 219, 232, 0.52);
+    .brand-logo {
+        float: left;
+        object {
+            path {
+                fill: #293340;
+            }
+        }
+    }
+    .links {
+        float: right;
+        ul {
+            color: #6d7784;
+            font-weight: 300;
+            line-height: 45px;
+            li {
+                display: inline-block;
+                margin-left: 25px;
+                >a {
+                    display: inline-block;
+                    opacity: .7;
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*=====  End of footer  ======*/

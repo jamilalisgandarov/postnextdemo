@@ -1,0 +1,160 @@
+/*=============================================
+=            Variables            =
+=============================================*/
+
+//fonts
+$font_graphic-web: "Graphik Web";
+$font_boing: "HILVCC+Boing";
+//colors
+$color_home-top-purple: #683bc3;
+$color_purple: #683bc3;
+$color_black-lighter: #293340;
+//sizes
+$size_border-radius: 5px;
+$size_wrapper-width: 1200px;
+//gradients
+$gradient_pink: linear-gradient(-135deg, #ff1f76 0%, #504aeb 100%);
+$gradient_green: linear-gradient(-135deg, #3be8b0 0%, #02cdff 100%);
+$gradient_blue: linear-gradient(-135deg, #a077ff 0%, #02cdff 100%);
+
+/*=====  End of Variables  ======*/
+
+/*=============================================
+=            Common modifications            =
+=============================================*/
+
+* {
+  outline: none;
+}
+
+body {
+  font-family: $font_graphic-web;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  &:focus,
+  &:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+/*=====  End of Common modifications  ======*/
+
+/*=============================================
+=            Shared elements and componenets            =
+=============================================*/
+
+.wrapper {
+  width: $size_wrapper-width;
+  margin: 0 auto;
+}
+
+.heading-title {
+  /* Manage your accounts: */
+  font-family: $font_boing;
+  font-weight: 500;
+  font-size: 36px;
+  color: #293340;
+  letter-spacing: -0.6px;
+}
+
+.desc-text {
+  font-family: $font_graphic-web;
+  font-size: 14px;
+  color: #6d7784;
+}
+
+.button-style {
+  display: inline-block;
+  font-family: $font_graphic-web;
+  font-size: 16px;
+  background: #683bc3;
+  border-radius: 5px;
+  padding: 19px 50px;
+  color: white;
+  font-weight: 300;
+  border: none;
+  letter-spacing: 1px;
+  &:hover {
+    color: white;
+  }
+  &.purple {
+    transition: 0.3s ease;
+    &:hover {
+      background: #5d34b1;
+    }
+  }
+}
+
+.dropdown {
+  position: relative;
+  cursor: pointer;
+  .dropdown-list {
+    display: none;
+    position: absolute;
+    width: 100%;
+    top: calc(100% + 6px);
+    background: white;
+    z-index: 23;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #6d7784;
+    box-shadow: 0 5px 26px -7px rgba(0, 0, 0, 0.51);
+    ul {
+      li {
+        a {
+          padding: 10px;
+          display: block;
+          &:hover {
+            background: rgba(240, 240, 240, 0.5);
+          }
+        }
+      }
+    }
+  }
+}
+
+.section-heading {
+  text-align: center;
+  .heading-title {
+    font-size: 36px;
+    margin-bottom: 12px;
+  }
+  .desc-text {
+    font-size: 18px;
+    font-weight: 300;
+  }
+}
+
+.clearfix {
+  &:after,
+  &:before {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+/*=====  End of Shared elements and componenets  ======*/
+
+/*=============================================
+=            Layouts            =
+=============================================*/
+
+@import "./layouts/_header";
+@import "./layouts/_footer";
+
+/*=====  End of Layouts  ======*/
+
+/*=============================================
+=            Views            =
+=============================================*/
+
+@import "./views/_home";
+
+/*=====  End of Views  ======*/
