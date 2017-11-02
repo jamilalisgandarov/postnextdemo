@@ -64,10 +64,10 @@
                         color: white;
                         width: 100%;
                         opacity: 0;
+                        top: 0;
+                        left: 0;
                         transition: 2.5s cubic-bezier(0.74, 0.08, 0.44, 1.06);
                         &.active {
-                            left: 0 !important;
-                            top: 0 !important;
                             opacity: 1 !important;
                         }
                         .icon {
@@ -103,8 +103,107 @@
         }
     }
     .lines {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
         .line {
             position: absolute;
+            &[data-toward="horizontal"] {
+                position: absolute;
+                height: 202px;
+                width: 100%;
+                top: 50%;
+                transform: translateY(-50%);
+                &:after,
+                &:before {
+                    transition: 2s ease-in-out;
+                }
+                &:after {
+                    content: "";
+                    position: absolute;
+                    background-color: rgba(224, 224, 224, 0.1);
+                    width: 100%;
+                    height: 1px;
+                    bottom: 0;
+                    left: -100%;
+                    animation: linesHorizontalLeft 4s ease-in-out infinite;
+                }
+                &:before {
+                    content: "";
+                    position: absolute;
+                    background-color: rgba(224, 224, 224, 0.1);
+                    width: 100%;
+                    height: 1px;
+                    top: 0;
+                    right: -100%;
+                    animation: linesHorizontalRight 4s ease-in-out infinite;
+                }
+            }
+            &[data-toward="vertical"] {
+                position: absolute;
+                height: 100%;
+                width: 302px;
+                left: 50%;
+                transform: translateX(-50%);
+                &:after,
+                &:before {
+                    transition: 2s ease-in-out;
+                }
+                &:after {
+                    content: "";
+                    position: absolute;
+                    background-color: rgba(224, 224, 224, 0.1);
+                    width: 1px;
+                    height: 100%;
+                    left: 0;
+                    bottom: -100%;
+                    animation: linesVerticalBottom 6s ease-in-out infinite;
+                }
+                &:before {
+                    content: "";
+                    position: absolute;
+                    background-color: rgba(224, 224, 224, 0.1);
+                    width: 1px;
+                    height: 100%;
+                    right: 0;
+                    top: -100%;
+                    animation: linesVerticalTop 6s ease-in-out infinite;
+                }
+            }
+        }
+        @keyframes linesHorizontalLeft {
+            0% {
+                left: -100%;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+        @keyframes linesHorizontalRight {
+            0% {
+                right: -100%;
+            }
+            100% {
+                right: 100%;
+            }
+        }
+        @keyframes linesVerticalTop {
+            0% {
+                top: -100%;
+            }
+            100% {
+                top: 100%;
+            }
+        }
+        @keyframes linesVerticalBottom {
+            0% {
+                bottom: -100%;
+            }
+            100% {
+                bottom: 100%;
+            }
         }
     }
     .end-desc {
@@ -220,6 +319,7 @@
             background: #ffffff;
             box-shadow: 0 2px 10px 0 #b5bed0;
             border-radius: 5px;
+            align-self: center;
             .form {
                 .form-heading {
                     padding: 25px;
@@ -462,7 +562,7 @@
                 text-align: center;
                 font-family: $font_graphic-web;
                 font-size: 16px;
-                color: #6D7784;
+                color: #6d7784;
                 font-weight: 300;
                 .main-price {
                     h1 {
@@ -475,18 +575,18 @@
                         font-family: $font_graphic-web;
                         font-weight: 300;
                         font-size: 18px;
-                        color: #6D7784;
+                        color: #6d7784;
                     }
                 }
                 .special-discount {
                     font-size: 12px;
-                    color: #6D7784;
+                    color: #6d7784;
                     margin-top: 10px;
                     font-weight: 300;
                 }
                 .pricing-name {
                     font-weight: 500;
-                    color: #683BC3;
+                    color: #683bc3;
                     text-transform: uppercase;
                     font-size: 21px;
                     line-height: 25px;
@@ -531,10 +631,11 @@
 #schedule {
     padding: 150px 0;
     text-align: center;
-    background: #F7F8F9;
+    background: #293340;
     .heading-title {
         font-size: 36px;
         margin-bottom: 30px;
+        color: white;
     }
     .desc-text {
         font-size: 18px;
@@ -542,6 +643,7 @@
         line-height: 32px;
         font-weight: 300;
         margin-bottom: 50px;
+        color: white;
     }
 }
 

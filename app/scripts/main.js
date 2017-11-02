@@ -60,7 +60,6 @@
   Plugin.prototype.init = function() {
     var _this = this;
     this.maxIndex = this._sliderContent.length;
-    this.setPositions();
     if (this.options.duration) {
       this.startSlidingContents(this.options.duration);
     }
