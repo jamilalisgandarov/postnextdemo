@@ -93,6 +93,8 @@
             box-sizing: border-box;
             transition: 1s ease;
             .details {
+                position: relative;
+                z-index: 32;
                 color: white;
                 transition: 0.4s ease;
                 .heading-title,
@@ -114,15 +116,16 @@
                     margin-top: 25px;
                     background-color: white;
                     color: #683bc3;
+                    cursor: pointer;
                 }
             }
             .signup-form {
                 position: absolute;
                 left: 50%;
                 top: 50%;
-                transform: translate3d(-50%, -55%, 0);
+                transform: translate3d(-50%, -45%, 0);
                 opacity: 0;
-                transition: 0.4s ease;
+                transition: 0.8s ease;
                 &.active {
                     transform: translate3d(-50%, -50%, 0);
                     opacity: 1 !important;

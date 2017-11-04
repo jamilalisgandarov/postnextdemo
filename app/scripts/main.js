@@ -47,10 +47,12 @@ $(document).ready(function() {
   //expanding login side on click
   if ($(window).innerWidth() > 1024) {
     $("#signin .side").click(function(params) {
-      $(this).attr("data-active", "true");
-      $(this)
-        .siblings()
-        .attr("data-active", "false");
+      if ($(this).attr("data-active") !== "open") {
+        $(this).attr("data-active", "true");
+        $(this)
+          .siblings()
+          .attr("data-active", "false");
+      }
     });
     $(document).on(
       "click",
