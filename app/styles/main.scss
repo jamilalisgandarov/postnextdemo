@@ -31,6 +31,52 @@ $gradient_blue: linear-gradient(-135deg, #a077ff 0%, #02cdff 100%);
     background-image: url($url);
 }
 
+@mixin hamburger-toggle($parent_class_name, $hamburger_class_name, $active_class_name, $width, $height, $line_heigth, $line_top, $line_bottom, $color) {
+    .#{$parent_class_name} {
+        position: relative;
+        width: $width+px;
+        height: $height+px;
+        .#{$hamburger_class_name} {
+            position: relative;
+            line-height: $height+px;
+            height: $line_heigth+px;
+            width: 100%;
+            display: inline-block;
+            background-color: $color;
+            transition: 0.2s linear;
+            &:after,
+            &:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                background-color: $color;
+                height: $line_heigth+px;
+                width: 100%;
+                transition: 0.3s ease-in;
+            }
+            &:after {
+                top: -$line_top+px;
+            }
+            &:before {
+                bottom: -$line_bottom+px;
+            }
+        }
+        &.#{$active_class_name} {
+            .#{$hamburger_class_name} {
+                background-color: transparent;
+                &:after {
+                    top: 0;
+                    transform: rotate(135deg);
+                }
+                &:before {
+                    bottom: 0;
+                    transform: rotate(-135deg);
+                }
+            }
+        }
+    }
+}
+
 
 /*=====  End of Variables  ======*/
 
@@ -228,15 +274,84 @@ a {
     }
 }
 
+@include hamburger-toggle("menu-toggle", "trigger", "is-active", 30, 30, 2, 10, 10, white);
+
+/*=====  End of Shared elements and componenets  ======*/
+
+
+/*=============================================
+=            Layouts            =
+=============================================*/
+
+@import "./layouts/_header";
+@import "./layouts/_footer";
+
+/*=====  End of Layouts  ======*/
+
+
+/*=============================================
+=            Views            =
+=============================================*/
+
+@import "./views/_home";
+@import "./views/_signin";
+
+/*=====  End of Views  ======*/
+
+
+/*=============================================
+=            Responsive            =
+=============================================*/
+
+@media screen and (max-width: $size_wrapper-width) {
+    .wrapper {
+        width: auto;
+        padding: 0 20px;
+    }
+    #home-top {
+        height: 700px;
+        .end-desc {
+            display: flex;
+            justify-content: center;
+            .desc {
+                margin-bottom: auto;
+            }
+        }
+        #info {
+            display: none;
+        }
+        &:after,
+        &:before {
+            height: 100%;
+        }
+    }
+}
+
 @media screen and (max-width: 1024px) {
     #signin {
         .page-holder {
             .side {
                 position: relative !important;
                 width: 100% !important;
-                div.signin{
-
-                padding-right: 0 ;
+                padding: 0 20px !important;
+                &.signin {
+                    padding-right: 0;
+                }
+                height: auto !important;
+                min-height: 98vh;
+            }
+            .signup {
+                .details {
+                    display: none;
+                }
+                div.signup-form {
+                    display: block;
+                    opacity: 1 !important;
+                    position: relative !important;
+                    transform: translate3d(0%, 0%, 0) !important;
+                    left: 0;
+                    top: 0;
+                    margin: 50px auto;
                 }
             }
         }
@@ -249,11 +364,12 @@ a {
             display: none;
             position: absolute;
             width: 100%;
-            top: 100%;
+            top: 0%;
             left: 0;
             padding: 20px 20px;
             box-sizing: border-box;
             background: #2a3440;
+            padding-top: 130px;
             ul {
                 li {
                     display: block !important;
@@ -264,6 +380,9 @@ a {
                     }
                 }
             }
+        }
+        .menu-toggle{
+          display: block !important;
         }
     }
 }
@@ -374,6 +493,19 @@ a {
     }
 }
 
+@media screen and (max-width: 600px) {
+    #signin {
+        .signup-form,
+        .signin-form {
+            min-width: initial !important;
+            width: 100%;
+            div.form {
+                min-width: 100% !important;
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 500px) {
     #features {
         .feature-list {
@@ -397,58 +529,6 @@ a {
                     margin-right: 0 !important;
                 }
             }
-        }
-    }
-}
-
-
-/*=====  End of Shared elements and componenets  ======*/
-
-
-/*=============================================
-=            Layouts            =
-=============================================*/
-
-@import "./layouts/_header";
-@import "./layouts/_footer";
-
-/*=====  End of Layouts  ======*/
-
-
-/*=============================================
-=            Views            =
-=============================================*/
-
-@import "./views/_home";
-@import "./views/_signin";
-
-/*=====  End of Views  ======*/
-
-
-/*=============================================
-=            Responsive            =
-=============================================*/
-
-@media screen and (max-width: $size_wrapper-width) {
-    .wrapper {
-        width: auto;
-        padding: 0 20px;
-    }
-    #home-top {
-        height: 700px;
-        .end-desc {
-            display: flex;
-            justify-content: center;
-            .desc {
-                margin-bottom: auto;
-            }
-        }
-        #info {
-            display: none;
-        }
-        &:after,
-        &:before {
-            height: 100%;
         }
     }
 }
