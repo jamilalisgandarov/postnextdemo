@@ -1,57 +1,78 @@
 header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 414141;
-  transition: 0.3s ease-in;
-  nav {
-    font-size: 16px;
-    .brand-logo {
-      > a {
-        display: block;
-        padding: 31px 0;
-      }
-    }
-    .menu {
-      > ul {
-        color: white;
-        font-weight: 300;
-        > li {
-          display: inline-block;
-          a {
-            display: block;
-            padding: 0 15px;
-            opacity: 0.9;
-            transition: 0.3s ease;
-            &:hover {
-              opacity: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 414141;
+    transition: 0.3s ease-in;
+    nav {
+        font-size: 16px;
+        .brand-logo {
+            >a {
+                display: block;
+                padding: 31px 0;
             }
-            &.border-lined {
-              padding: 12px 20px;
-              border: 1px solid white;
-              box-shadow: 0 0 1px 0px white inset, 0 0 1px 0px white;
-              border-radius: 100px;
-            }
-          }
         }
-      }
+        .menu {
+            >ul {
+                color: white;
+                font-weight: 300;
+                >li {
+                    display: inline-block;
+                    a {
+                        display: block;
+                        padding: 0 15px;
+                        opacity: 0.9;
+                        transition: 0.3s ease;
+                        &:hover {
+                            opacity: 1;
+                        }
+                        &.border-lined {
+                            padding: 12px 20px;
+                            border: 1px solid white;
+                            box-shadow: 0 0 1px 0px white inset, 0 0 1px 0px white;
+                            border-radius: 100px;
+                            transition: .3s;
+                            &:hover {
+                                background: white;
+                                color: $color_purple;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .language {
+            .active {
+                color: white;
+                font-weight: 300;
+                display: block;
+                padding: 0 15px;
+                opacity: 0.9;
+                transition: 0.3s ease;
+                cursor: pointer;
+            }
+            i.icon {
+                font-size: 12px;
+                margin-left: 5px;
+                color: white;
+            }
+            .dropdown-list {
+                min-width: 150px;
+                width: auto;
+                margin-top: 15px;
+                min-height: 116px;
+                li {
+                    >a {
+                        padding: 12px 18px;
+                    }
+                }
+            }
+        }
     }
-    .language {
-      .active {
-        color: white;
-        font-weight: 300;
-        display: block;
-        padding: 0 15px;
-        opacity: 0.9;
-        transition: 0.3s ease;
-        cursor: pointer;
-      }
+    &.fixed {
+        background-color: #293340;
+        z-index: 232323;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.13);
     }
-  }
-  &.fixed {
-    background-color: #293340;
-    z-index: 232323;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.13);
-  }
 }

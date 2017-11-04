@@ -40,7 +40,6 @@
                 <div class="brand-logo flex-align-left">
                     <a href="">
                         <object data="./images/logo - light.svg" alt="Next Post" width="150" type="image/svg+xml">
-                                <img src="yourfallback.jpg" />
                         </object>
                     </a>
                 </div>
@@ -63,13 +62,21 @@
                         </li>
                     </ul>
                 </div>
-                <div class="language">
-                    <span class="active">English</span>
-                    <ul class="language-list">
-                        <li>
-                            <a href=""></a>
-                        </li>
-                    </ul>
+                <div class="language dropdown dropdown-click">
+                    <span class="active">English <i class="icon icon-arrow-down"></i></span>
+                    <div class="dropdown-list">
+                        <ul class="language-list">
+                            <li>
+                                <a href="">Russian</a>
+                            </li>
+                            <li>
+                                <a href="">Russian</a>
+                            </li>
+                            <li>
+                                <a href="">Russian</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </nav>
         </div>
@@ -80,32 +87,38 @@
     <section id="home-top">
         <div class="wrapper">
             <div id="info">
-                <div class="info-holder" data-animation-role='main-container'>
+                <div class="info-holder" data-animation-role='main-container' data-positon='left'>
                     <div class="content-wrapper">
-                        <div class="content-list" data-animation-role='content-list'>
-                            <div class="content flex flex-end flex-top flex-col" data-animation-role='content'>
-                                <div class="icon animated-start">
-                                    <i class="icon-clock icon"></i>
-                                </div>
-                                <div class="desc animated-start">
-                                    <p>Save time managing <br> your Instagram <br> accounts (1)</p>
-                                </div>
+                        <div class="content flex flex-end flex-top flex-col" data-animation-role='content'>
+                            <div class="icon animated-start">
+                                <i class="icon-clock icon"></i>
                             </div>
-                            <div class="content flex flex-end flex-top flex-col" data-animation-role='content'>
-                                <div class="icon ">
-                                    <i class="icon-paper-plane icon"></i>
-                                </div>
-                                <div class="desc ">
-                                    <p> A Smarter way to <br> auto post on Instagram</p>
-                                </div>
+                            <div class="desc animated-start">
+                                <p>Save time managing <br> your Instagram <br> accounts (1)</p>
                             </div>
-                            <div class="content flex flex-end flex-top flex-col" data-animation-role='content'>
-                                <div class="icon ">
-                                    <i class="icon-calendar icon"></i>
-                                </div>
-                                <div class="desc ">
-                                    <p> Schedule your posts <br> at a future date to <br> save time</p>
-                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-holder" data-animation-role='main-container' data-positon='center'>
+                    <div class="content-wrapper">
+                        <div class="content flex flex-end flex-top flex-col" data-animation-role='content' >
+                            <div class="icon animated-start">
+                                <i class="icon-clock icon"></i>
+                            </div>
+                            <div class="desc animated-start">
+                                <p>Save time managing <br> your Instagram <br> accounts (1)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-holder" data-animation-role='main-container'  data-positon='right'>
+                    <div class="content-wrapper">
+                        <div class="content flex flex-end flex-top flex-col" data-animation-role='content'>
+                            <div class="icon animated-start">
+                                <i class="icon-clock icon"></i>
+                            </div>
+                            <div class="desc animated-start">
+                                <p>Save time managing <br> your Instagram <br> accounts (1)</p>
                             </div>
                         </div>
                     </div>
@@ -120,9 +133,6 @@
                 <div class="link">
                     <a href="" class="button-style purple">Get started</a>
                 </div>
-            </div>
-            <div class="flex-align-bottom">
-                <a href="#" class="play-animation"><i class="icon icon-reload"></i>  Play again</a>
             </div>
         </div>
         <div class="lines">
@@ -179,71 +189,79 @@
                         </div>
                     </div>
                 </div>
-                <div class="contact-form">
-                    <form action="">
-                        <div class="form complete">
-                            <div class="form-heading">
-                                <div class="desc-text">
-                                    <p>
-                                        Future starts today
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="form-body ">
-                                <div class="form-element">
-                                    <div class="input-wrapper">
-                                        <input type="text" placeholder="Full Name">
-                                        <i class="icon icon-user"></i>
-                                    </div>
-                                    <div class="input-wrapper">
-                                        <input type="text" placeholder="E-mail">
-                                        <i class="icon icon-envelope-open"></i>
-                                    </div>
-                                    <div class="input-wrapper">
-                                        <input type="text" placeholder="Password">
-                                        <i class="icon icon-key"></i>
-                                    </div>
-                                    <div class="input-wrapper dropdown dropdown-click">
-                                        <input type="text" class="dropdown-append-value" placeholder="Select your timezone">
-                                        <i class="icon icon-clock"></i>
-                                        <div class="dropdown-list">
-                                            <ul>
-                                                <li>
-                                                    <a href="#" data-value='1'>UTC 1</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" data-value='2'>UTC 2</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" data-value='3'>UTC 3</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="input-wrapper">
-                                        <button class="button-style purple">Get started</button>
-
-                                    </div>
-                                </div>
-                                <div class="success-status">
-                                    <div class="status">
-                                        <i class="icon-check icon"></i>
-                                    </div>
-                                    <div class="heading-title">
-                                        <h1>Welcome!</h1>
-                                    </div>
+                <div class="form-holder flex-grow flex flex-center">
+                    <div class="contact-form">
+                        <form action="">
+                            <div class="form">
+                                <div class="form-heading">
                                     <div class="desc-text">
                                         <p>
-                                            Congratulations you have <br> successfully registered.
+                                            Future starts today
                                         </p>
                                     </div>
-                                    <a href="#" class="button-style purple">
+                                </div>
+                                <div class="form-body ">
+                                    <div class="form-element">
+                                        <div class="input-wrapper">
+                                            <input type="text" placeholder="Full Name">
+                                            <i class="icon icon-user"></i>
+                                        </div>
+                                        <div class="input-wrapper">
+                                            <input type="text" placeholder="E-mail">
+                                            <i class="icon icon-envelope-open"></i>
+                                        </div>
+                                        <div class="input-wrapper">
+                                            <input type="text" placeholder="Password">
+                                            <i class="icon icon-key"></i>
+                                        </div>
+                                        <div class="input-wrapper dropdown dropdown-click">
+                                            <input type="text" class="dropdown-append-value" placeholder="Select your timezone">
+                                            <i class="icon icon-clock"></i>
+                                            <div class="dropdown-list">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#" data-value='1'>UTC 1</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" data-value='2'>UTC 2</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" data-value='3'>UTC 3</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" data-value='2'>UTC 2</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" data-value='3'>UTC 3</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="input-wrapper">
+                                            <button class="button-style purple">Get started</button>
+
+                                        </div>
+                                    </div>
+                                    <div class="success-status">
+                                        <div class="status">
+                                            <i class="icon-check icon"></i>
+                                        </div>
+                                        <div class="heading-title">
+                                            <h1>Welcome!</h1>
+                                        </div>
+                                        <div class="desc-text">
+                                            <p>
+                                                Congratulations you have <br> successfully registered.
+                                            </p>
+                                        </div>
+                                        <a href="#" class="button-style purple">
                                         Go to dashboard
                                     </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -647,9 +665,7 @@
             <div class="clearfix">
                 <div class="brand-logo">
                     <a href="">
-                        <object data="./images/logo - light.svg" alt="Next Post" width="150" type="image/svg+xml">
-                                        <img src="yourfallback.jpg" />
-                        </object>
+                        <img src="./images/logo - light.svg" alt="">
                     </a>
                 </div>
                 <div class="links">
@@ -692,7 +708,6 @@
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
-    <script src="/bower_components/modernizr/modernizr.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
